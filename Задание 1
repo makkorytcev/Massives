@@ -1,0 +1,38 @@
+using System;
+
+namespace массив
+{
+ class Program
+    {
+ static void Main(string[] args)
+        {
+ Console.WriteLine("Введите элементы массивы");
+ var array = Array.ConvertAll(Console.ReadLine().Split(' '), s => double.Parse(s));
+            
+ double max = array[0];
+ double s = 0;
+ double sr = 0;
+ Console.Write("Обратный массив = ");
+ for (int i = array.Length-1; i >= 0; i--)
+            {
+ Console.Write(array[i] + " ");
+ s += array[i];
+ if (max < array[i])
+                {
+ max = array[i];
+                }
+            }
+ sr = s / array.Length;
+ Console.Write("\n" + "Макс. элемент массива = {0}", max);
+ Console.Write("\n" + "Массив с заменнеными нулевыми значениями на ср.ареф. = ");
+ for (int j = 0; j < array.Length; j++)
+            {
+                if (array[j] == 0)
+                {
+                    array[j] = sr;
+                }
+                Console.Write(array[j] + " ");
+            }
+        }
+    }
+}
