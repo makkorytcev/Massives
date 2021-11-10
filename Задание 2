@@ -1,0 +1,45 @@
+using System;
+
+namespace массив
+{
+ class Program
+    {
+ static void Main(string[] args)
+        {
+ Console.WriteLine("Введите элементы массива");
+ var array = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+ int[] array_1 = new int[array.Length];
+            int[] array_2 = new int[array.Length];
+            double min = array[0];
+            int index = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (min > array[i])
+                {
+                    min = array[i];
+                    index = i;
+                }
+            }
+            Console.Write($"Мин. элемент массива = {min} " + "\n" + $"Индекс мин. элемента = {index}");
+            Console.Write("\n" + "Массив с положительными элементами = ");
+            for (int j = 0; j < array.Length; j++)
+            {
+                if (array[j] > 0)
+                {
+                    array_1[j] = array[j];
+                    Console.Write(array_1[j] + " ");
+                }
+            }
+            Console.Write("\n" + "Массив с отрицательными элементами = ");
+            for (int k = 0; k < array.Length; k++)
+            {
+                if (array[k] < 0)
+                {
+                     array_2[k] = array[k];
+                     Console.Write(array_2[k] + " ");
+                }
+             }
+            Console.ReadLine();
+        }
+    }
+}
