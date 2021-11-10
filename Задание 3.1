@@ -1,0 +1,25 @@
+using System;
+
+namespace mass_3.1
+{
+ class Program
+    {
+ static void Main(string[] args)
+        {
+ Console.WriteLine("Введите элементы массивы");
+ var d = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+ int s = 0;
+ Console.Write("Массив = ");
+ for (int i = 0; i < d.Length; i++)
+            {
+ if (i % 2 == 1)
+                {
+ s += d[i];
+                }
+ Console.Write(d[i] + " ");
+            }
+ Console.WriteLine("\n" + $"Сумма нечетных элементов = {s}");
+            Console.ReadLine();
+        }
+    }
+}
